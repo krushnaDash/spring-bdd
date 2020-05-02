@@ -36,8 +36,8 @@ public class ProductStepDefination {
 	}
 
 	@Then("the client receives status code of {int}")
-	public void the_client_receives_status_code_of(Integer int1) throws Exception {
-		action.andExpect(status().isOk());
+	public void the_client_receives_status_code_of(Integer status) throws Exception {
+		action.andExpect(status().is(status));
 	}
 
 	@Then("the client receives product with name")

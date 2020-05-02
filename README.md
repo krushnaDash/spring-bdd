@@ -1,4 +1,7 @@
 # Spring boot -cucumber - BDD
+
+![Behavior Driven Development (BDD)](BDDSteps.png)
+
 Cucumber is one of the tools written in ruby to do business-driven development. From my point of view, BDD is almost similar to TDD and it is on top TDD with an extra step that has the feature file where you write the different business scenarios in plain English, which is understandable by business people.
 
 Against these feature files, you will have the step-definition classes where each scenario will present into multiple-step method to write the logic inside that. The step definition class will be similar to your traditional JUNIT test class at TDD development.
