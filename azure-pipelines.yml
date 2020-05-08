@@ -16,5 +16,10 @@ steps:
   displayName: Build an image
   inputs:
     repository: $(imageName)
-    command: build
+    command: buildAndPush
     Dockerfile: Dockerfile
+	repository: spring-bdd
+    containerRegistry: KrushnaAzure
+	tags: |
+      $(Build.BuildId)
+      latest
