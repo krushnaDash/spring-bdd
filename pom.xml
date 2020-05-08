@@ -79,7 +79,7 @@
 						</goals>
 						<configuration>
 							<projectName>CucumberWebGui</projectName>
-							<outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
+							<outputDirectory>${project.build.directory}</outputDirectory>
 							<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
 							<skippedFails>true</skippedFails>
 						</configuration>
