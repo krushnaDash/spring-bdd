@@ -16,6 +16,6 @@ WORKDIR /build/
 RUN mvn clean compile package install
 
 # Expose the port 8080 and 22 for SSH
-EXPOSE 8080 22
+EXPOSE 8080 2222
 # runs application
 CMD ["./RunApplication.sh"]
