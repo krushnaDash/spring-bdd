@@ -2,10 +2,10 @@ FROM maven:3.5.2-jdk-8-alpine AS MAVEN_BUILD
 MAINTAINER Krushna Dash
 
 # Add SSh
-#RUN apk update
-#RUN apk add openssh \
-#     && echo "root:Docker!" | chpasswd
-#COPY sshd_config /etc/ssh/
+RUN apk update
+RUN apk add openssh \
+     && echo "root:Docker!" | chpasswd
+COPY sshd_config /etc/ssh/
 
 ENV environment dev
 COPY pom.xml /build/
