@@ -34,7 +34,6 @@ public class ProductStepDefination {
 	public void the_client_calls_getProduct() throws Exception {
 		action=mvc.perform(get("/getProduct").contentType(MediaType.APPLICATION_JSON));
 	}
-
 	@Then("the client receives status code of {int}")
 	public void the_client_receives_status_code_of(Integer status) throws Exception {
 		action.andExpect(status().is(status));

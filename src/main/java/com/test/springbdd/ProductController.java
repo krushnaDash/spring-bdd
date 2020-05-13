@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
 
 	Logger log = LoggerFactory.getLogger(this.getClass());
-
+	
+	@Value("${connectionString}")
+	String connectionString;
+	
 	@GetMapping("/getProduct")
 	public ResponseEntity<Product> getProduct() {
 		log.info("Called /getProduct");
@@ -40,6 +44,7 @@ public class ProductController {
 		Map<String, Object> data = new HashMap<>();
 		data.put("files List", dir.listFiles());
 		data.put("Message", "File Crated " + fileCreated + file.getAbsolutePath());
+		data.put("FromKeyValue", connectionString);
 		return ResponseEntity.ok(data);
 	}
 
