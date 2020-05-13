@@ -6,7 +6,8 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,8 +18,9 @@ public class ProductController {
 
 	Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	@Value("${connectionString}")
-	String connectionString;
+
+	@Autowired
+	Environment env;
 	
 	@GetMapping("/getProduct")
 	public ResponseEntity<Product> getProduct() {
@@ -44,7 +46,7 @@ public class ProductController {
 		Map<String, Object> data = new HashMap<>();
 		data.put("files List", dir.listFiles());
 		data.put("Message", "File Crated " + fileCreated + file.getAbsolutePath());
-		data.put("FromKeyValue", connectionString);
+		data.put("FromKeyValue",env.getProperty("connectionString"));
 		return ResponseEntity.ok(data);
 	}
 
