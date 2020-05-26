@@ -18,8 +18,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<cucumber.version>4.7.0</cucumber.version>
-		<maven.test.failure.ignore>true</maven.test.failure.ignore> <!-- To generate the cucumber HTML report on test failure also -->
-		<azure.version>2.2.4</azure.version>
+		<maven.test.failure.ignore>true</maven.test.failure.ignore> <!-- To generate the cucumber HTML report on test failure also  -->
 	</properties>
 
 	<dependencies>
@@ -53,14 +52,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.microsoft.azure</groupId>
-			<artifactId>azure-spring-boot-bom</artifactId>
-			<version>${azure.version}</version>
-			<type>pom</type>
-			<scope>import</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -80,7 +71,7 @@
 				<artifactId>azure-webapp-maven-plugin</artifactId>
 				<version>1.9.0</version>
 			</plugin>
-
+			
 			<plugin>
 				<groupId>net.masterthought</groupId>
 				<artifactId>maven-cucumber-reporting</artifactId>
